@@ -4,7 +4,7 @@ import numpy as np
 import cs as scaling
 
 st.set_page_config(
-    page_title="Polystocks",
+    page_title="Polycast",
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="expanded",
