@@ -52,7 +52,7 @@ dates = [(date + datetime.timedelta(days=i)).strftime('%m-%d-%Y') for i in range
 prices = cur_tick_data['Стоимость при закрытии торгов, $'].iloc[-20:].tolist()
 
 # loading model and scaler, forecasting price
-model = keras.models.load_model('model.h5')
+model = keras.models.load_model('11.h5')
 cs = scaling.CustomScaler((13.947505579, 180.33)).fit(cur_tick_data['Стоимость при закрытии торгов, $'])
 for i in range(h):
     prices += cs.unscale(model.predict(cs.scale(np.array(prices[-20:]).reshape((1,20,1))), verbose=0).reshape(-1)).tolist()
