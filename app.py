@@ -28,8 +28,7 @@ with dayly:
     # defining interface elements
     chart, filter = st.columns([5,1])
     with filter:
-        hh = st.selectbox('Группа компаний', options=list(tickers.keys()))
-        c = st.selectbox('Компания', options=tickers[hh])
+        c = st.selectbox('Компания', options=tickers['medium'])
         h = st.slider('Горизонт прогнозирования', min_value=1, max_value=30, step=1)
     df = st.expander('Смотреть данные')
 
