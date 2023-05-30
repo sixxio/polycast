@@ -22,9 +22,9 @@ file = open('tickers.json','r')
 tickers = json.loads(file.read())
 file.close()
 
-dayly, minutly = st.tabs(['Долгосрочное прогнозирование','Краткосрочное прогнозирование'])
+daily, minutly = st.tabs(['Долгосрочное прогнозирование','Краткосрочное прогнозирование'])
 
-with dayly:
+with daily:
     # defining interface elements
     chart, filter = st.columns([5,1])
     with filter:
@@ -73,7 +73,7 @@ with minutly:
     with filter:
         hh_sh = st.selectbox('Группа компаний', options=list(tickers.keys()), key='short1')
         c_sh = st.selectbox('Компания', options=tickers[hh_sh], key='short2')
-        h_sh = st.slider('Горизонт прогнозирования', min_value=1, max_value=30, step=1, key='short3')
+        h_sh = st.slider('Горизонт прогнозирования', min_value=1, max_value=60, step=1, key='short3')
     df = st.expander('Смотреть данные')
 
     # fetching and parsing data from nasdaq
