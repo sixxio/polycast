@@ -33,7 +33,7 @@ with dayly:
     df = st.expander('Смотреть данные')
 
     # fetching and parsing data from nasdaq
-    resp = rq.get(f'https://api.nasdaq.com/api/quote/{c}/chart?assetclass=stocks&fromdate=2013-02-02&todate={datetime.datetime.now().strftime("%Y-%m-%d")}', headers=headers, verify=True)
+    resp = rq.get(f'https://api.nasdaq.com/api/quote/{c}/chart?assetclass=stocks&fromdate=2020-01-01&todate={datetime.datetime.now().strftime("%Y-%m-%d")}', headers=headers, verify=True)
     smth = json.loads(re.search('\[.*\]', resp.text).group())
     cur_tick_data = pd.DataFrame([smth[k]['z'] for k in range(len(smth))]).drop(columns='value')
 
