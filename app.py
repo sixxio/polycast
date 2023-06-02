@@ -28,7 +28,7 @@ with daily:
     # defining interface elements
     chart, filter = st.columns([5,1])
     with filter:
-        c = st.selectbox('Компания', options=tickers['medium'])
+        c = st.selectbox('Компания', options=tickers)
         h = st.slider('Горизонт прогнозирования', min_value=1, max_value=30, step=1)
     df = st.expander('Смотреть данные')
 
@@ -71,7 +71,7 @@ with daily:
 with minutly:
     chart, filter = st.columns([5,1])
     with filter:
-        c_sh = st.selectbox('Компания', options=tickers['medium'], key='short2')
+        c_sh = st.selectbox('Компания', options=tickers, key='short2')
         h_sh = st.slider('Горизонт прогнозирования', min_value=1, max_value=60, step=1, key='short3')
     df = st.expander('Смотреть данные')
 
